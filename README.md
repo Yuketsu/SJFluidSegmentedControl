@@ -18,8 +18,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-- iOS 8.0+ 
-- Xcode 8.0+
+- Xcode 10.0+
 - Swift 4.0+
 
 **Note:** `SJFluidSegmentedControl` is not intended to be used from Objective-C. For an Objective-C version of this library, please refer to the [LUNSegmentedControl](https://github.com/LunApps/LUNSegmentedControl).
@@ -62,7 +61,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'SJFluidSegmentedControl', '~> 1.0'
+    pod 'SJFluidSegmentedControl', :git => 'https://github.com/Yuketsu/SJFluidSegmentedControl.git'
 end
 ```
 
@@ -266,9 +265,7 @@ segmentedControl.reloadData()
 
 ## Author
 
-This library has been adapted for Swift 3.0+ by **Sasho Jadrovski**, [http://jadrovski.com](http://jadrovski.com). The original creators are [LunApps](https://lunapps.com), as stated above.
-
-This library has been adapted for Swift 4.2 by Iurii Lebedev, http://devlebedev.com. The original creators are LunApps, as stated above.
+This library has been adapted for Swift 4.2 by **Iurii Lebedev**, http://devlebedev.com. The original creators are LunApps, as stated above. Adapted for Swift 3.0+ by **Sasho Jadrovski**, [http://jadrovski.com](http://jadrovski.com)
 
 ## License
 
