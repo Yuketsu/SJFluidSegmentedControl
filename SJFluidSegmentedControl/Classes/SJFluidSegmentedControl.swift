@@ -984,16 +984,13 @@ public class SJFluidSegmentedControl: UIView, UIGestureRecognizerDelegate {
     }
     
     fileprivate func gradientColorForBounce(_ bounce: SJFluidSegmentedControlBounce) -> [UIColor] {
-        var colors: [UIColor]?
-        colors = dataSource?.segmentedControl?(self, gradientColorsForBounce: bounce)
-        if colors == nil {
-            colors = [gradientBounceColor]
+        guard var colors = dataSource?.segmentedControl?(self, gradientColorsForBounce: bounce) else {
+            return [gradientBounceColor]
         }
-        if colors!.count == 1 {
-            let firstColor = (colors?.first)!
-            colors?.append(firstColor)
+        if colors.count == 1 {
+            colors.append((colors.first)!)
         }
-        return colors!
+        return colors
     }
     
     // MARK: - Shadow Setup
