@@ -1126,8 +1126,8 @@ public class SJFluidSegmentedControl: UIView, UIGestureRecognizerDelegate {
         }
         switch transitionStyle {
         case .fade:
-            selectedSegmentViewContainers[index].alpha = 1 - fabs(percent)
-            segmentViewContainers[index].alpha = fabs(percent)
+            selectedSegmentViewContainers[index].alpha = 1 - abs(percent)
+            segmentViewContainers[index].alpha = abs(percent)
         case .slide:
             let segmentView = selectedSegmentViewContainers[index]
             if segmentView.layer.mask == nil {
@@ -1269,7 +1269,7 @@ public class SJFluidSegmentedControl: UIView, UIGestureRecognizerDelegate {
         let p3x = height / 2 + (width - height) * 3 / 4
         let p3yLeftPartOfExpression = (p1.y + p4.y * 3) / 4
         
-        let p2p3yRightPartOfExpression = height * 0.1 * (0.2 - fabs(0.5 - newPercentage)) / 0.2
+        let p2p3yRightPartOfExpression = height * 0.1 * (0.2 - abs(0.5 - newPercentage)) / 0.2
         if newPercentage > 0.3 && newPercentage < 0.7 {
             let p2y = p2yLeftPartOfExpression + p2p3yRightPartOfExpression
             p2 = CGPoint(x: p2x, y: p2y)
